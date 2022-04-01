@@ -1,0 +1,48 @@
+{
+  "name": "tout-y",
+  "utterances": {
+    "en": [
+      "Je m'appelle AHOKPOSSI Marc Aurel",
+      "Je m'appelle Marc Aurel AHOKPOSSI",
+      "Marc",
+      "J'ai 20 ans",
+      "Je suis étudiant en licence",
+      "J'habite à Pahou",
+      "Je voudrais écrit de Cotonou",
+      "Nous sommes le 06 mars 2022",
+      "Demain sera le 07/03/2022",
+      "Salut",
+      "Hello",
+      "Hi"
+    ]
+  },
+  "slots": [
+    {
+      "id": "bwG2z049jOSGIyfRPaGzS",
+      "name": "date",
+      "entities": [
+        "time"
+      ],
+      "color": 1
+    },
+    {
+      "id": "gF1Rp-9-Y8Ke-QxKH349C",
+      "name": "Salut",
+      "entities": [
+        "any",
+        "ordinal",
+        "email",
+        "time",
+        "url",
+        "phoneNumber",
+        "distance",
+        "duration",
+        "number"
+      ],
+      "color": 2
+    }
+  ],
+  "contexts": [
+    "global"
+  ]
+}

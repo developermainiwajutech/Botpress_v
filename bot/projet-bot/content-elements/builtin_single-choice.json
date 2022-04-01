@@ -1,0 +1,149 @@
+[
+  {
+    "id": "builtin_single-choice-70ryxe",
+    "formData": {
+      "dropdownPlaceholder$en": "Select...",
+      "choices$en": [
+        {
+          "title": "Curriculum Vitae",
+          "value": "Curriculum Vitae"
+        },
+        {
+          "title": "Lettre de motivation",
+          "value": "Lettre de motivation"
+        },
+        {
+          "title": "Cahier de charge",
+          "value": "Cahier de charge"
+        },
+        {
+          "title": "Fiche de paie",
+          "value": "Fiche de paye"
+        },
+        {
+          "title": "Contrat",
+          "value": "Contrat"
+        },
+        {
+          "title": "Attestation",
+          "value": "Attestation"
+        }
+      ],
+      "markdown$en": true,
+      "disableFreeText$en": true,
+      "typing$en": true,
+      "text$en": "Que désirez vous?"
+    },
+    "createdBy": "admin",
+    "createdOn": "2022-03-04T10:37:33.700Z",
+    "modifiedOn": "2022-03-29T09:07:04.022Z"
+  },
+  {
+    "id": "builtin_single-choice-4RmuJ3",
+    "formData": {
+      "dropdownPlaceholder$en": "Select...",
+      "choices$en": [
+        {
+          "title": "Oui",
+          "value": "Oui"
+        },
+        {
+          "title": "Non",
+          "value": "Non"
+        }
+      ],
+      "markdown$en": true,
+      "disableFreeText$en": true,
+      "typing$en": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2022-03-04T13:40:41.962Z",
+    "modifiedOn": "2022-03-04T13:40:41.962Z"
+  },
+  {
+    "id": "builtin_single-choice-5MGD4I",
+    "formData": {
+      "dropdownPlaceholder$en": "Select...",
+      "choices$en": [
+        {
+          "title": "Oui",
+          "value": "Oui"
+        },
+        {
+          "title": "Non",
+          "value": "Non"
+        }
+      ],
+      "markdown$en": true,
+      "disableFreeText$en": false,
+      "typing$en": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2022-03-07T11:33:31.870Z",
+    "modifiedOn": "2022-03-07T11:33:31.870Z"
+  },
+  {
+    "id": "builtin_single-choice-Oyulre",
+    "formData": {
+      "dropdownPlaceholder$en": "Select...",
+      "choices$en": [
+        {
+          "title": "Oui",
+          "value": "Oui"
+        },
+        {
+          "title": "Non",
+          "value": "Non"
+        }
+      ],
+      "markdown$en": true,
+      "disableFreeText$en": false,
+      "typing$en": true
+    },
+    "createdBy": "admin",
+    "createdOn": "2022-03-07T11:33:31.871Z",
+    "modifiedOn": "2022-03-07T11:33:31.871Z"
+  },
+  {
+    "id": "builtin_single-choice-3tZg9l",
+    "formData": {
+      "dropdownPlaceholder$en": "oui",
+      "choices$en": [
+        {
+          "title": "Non",
+          "value": "non"
+        }
+      ],
+      "markdown$en": true,
+      "disableFreeText$en": false,
+      "typing$en": true,
+      "text$en": "Oui"
+    },
+    "createdBy": "admin",
+    "createdOn": "2022-03-29T08:14:15.188Z",
+    "modifiedOn": "2022-03-29T08:14:15.188Z"
+  },
+  {
+    "id": "builtin_single-choice-d66L-7",
+    "formData": {
+      "dropdownPlaceholder$en": "Select...",
+      "choices$en": [
+        {
+          "title": "Oui",
+          "value": "Oui"
+        },
+        {
+          "title": "Non",
+          "value": "Non"
+        }
+      ],
+      "markdown$en": true,
+      "disableFreeText$en": true,
+      "typing$en": true,
+      "text$en": "Voulez vous produire un autre document."
+    },
+    "createdBy": "admin",
+    "createdOn": "2022-03-29T08:17:30.166Z",
+    "modifiedOn": "2022-03-29T08:47:42.350Z"
+  }
+]

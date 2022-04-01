@@ -1,0 +1,93 @@
+{
+  "version": "0.0.1",
+  "catchAll": {},
+  "startNode": "titre",
+  "description": "",
+  "nodes": [
+    {
+      "id": "ad3e96cccb",
+      "name": "titre",
+      "onEnter": [
+        "say #!builtin_text-cPudr6"
+      ],
+      "onReceive": [
+        "builtin/setVariable {\"type\":\"session\",\"name\":\"titre\",\"value\":\"{{event.preview}}\"}"
+      ],
+      "next": [
+        {
+          "condition": "true",
+          "node": "auteur"
+        }
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "4ab58d8ef9",
+      "name": "auteur",
+      "next": [
+        {
+          "condition": "true",
+          "node": "entreprise"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-U7SdBY"
+      ],
+      "onReceive": [
+        "builtin/setVariable {\"type\":\"session\",\"name\":\"auteur\",\"value\":\"{{event.preview}}\"}"
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "653b26c476",
+      "name": "entreprise",
+      "next": [
+        {
+          "condition": "true",
+          "node": "objectif"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-5oPFj_"
+      ],
+      "onReceive": [
+        "builtin/setVariable {\"type\":\"session\",\"name\":\"entreprise\",\"value\":\"{{event.preview}}\"}"
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "5d2664dcbe",
+      "name": "objectif",
+      "next": [
+        {
+          "condition": "true",
+          "node": "resultat"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-QZWj5R"
+      ],
+      "onReceive": [
+        "builtin/setVariable {\"type\":\"session\",\"name\":\"objectif\",\"value\":\"{{event.preview}}\"}"
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "f38c42d7a4",
+      "name": "resultat",
+      "next": [
+        {
+          "condition": "true",
+          "node": ""
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-LZpCYh"
+      ],
+      "onReceive": [
+        "builtin/setVariable {\"type\":\"session\",\"name\":\"resultat\",\"value\":\"{{event.preview}}\"}"
+      ],
+      "type": "standard"
+    }
+  ]
+}

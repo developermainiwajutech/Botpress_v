@@ -1,0 +1,424 @@
+{
+  "version": "0.0.1",
+  "catchAll": {},
+  "startNode": "annee",
+  "description": "",
+  "nodes": [
+    {
+      "id": "f569822562",
+      "name": "annee",
+      "onEnter": [
+        "say #!builtin_text-IMWSAp"
+      ],
+      "onReceive": [
+        "builtin/setVariable {\"type\":\"session\",\"name\":\"annee\",\"value\":\"{{event.preview}}\"}"
+      ],
+      "next": [
+        {
+          "condition": "true",
+          "node": "entreprise"
+        }
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "f9584193ff",
+      "name": "entreprise",
+      "next": [
+        {
+          "condition": "true",
+          "node": "IFU"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-Zct9D2",
+        "say #!builtin_text-A9UPT2"
+      ],
+      "onReceive": [
+        "builtin/setVariable {\"type\":\"session\",\"name\":\"entreprise\",\"value\":\"{{event.preview}}\"}"
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "4b9d012d2d",
+      "name": "IFU",
+      "next": [
+        {
+          "condition": "true",
+          "node": "lieu"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-ZSeiLh"
+      ],
+      "onReceive": [
+        "builtin/setVariable {\"type\":\"session\",\"name\":\"ifu\",\"value\":\"{{event.preview}}\"}"
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "f17412a9b0",
+      "name": "lieu",
+      "next": [
+        {
+          "condition": "true",
+          "node": "nom"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-r4q6yG"
+      ],
+      "onReceive": [
+        "builtin/setVariable {\"type\":\"session\",\"name\":\"lieu\",\"value\":\"{{event.preview}}\"}"
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "90eeb9857a",
+      "name": "nom",
+      "next": [
+        {
+          "condition": "true",
+          "node": "role"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-zTfoeR"
+      ],
+      "onReceive": [
+        "builtin/setVariable {\"type\":\"session\",\"name\":\"nom\",\"value\":\"{{event.preview}}\"}"
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "9877b2e2e1",
+      "name": "role",
+      "next": [
+        {
+          "condition": "true",
+          "node": "client"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-JX9dQ4"
+      ],
+      "onReceive": [
+        "builtin/setVariable {\"type\":\"session\",\"name\":\"role\",\"value\":\"{{event.preview}}\"}"
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "4d4ee009ca",
+      "name": "client",
+      "next": [
+        {
+          "condition": "true",
+          "node": "adresse"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-U0-rXj",
+        "say #!builtin_text-qvQhYJ"
+      ],
+      "onReceive": [
+        "builtin/setVariable {\"type\":\"session\",\"name\":\"client\",\"value\":\"{{event.preview}}\"}"
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "0b5ac3a971",
+      "name": "adresse",
+      "next": [
+        {
+          "condition": "true",
+          "node": "date"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-dG5wG7"
+      ],
+      "onReceive": [
+        "builtin/setVariable {\"type\":\"session\",\"name\":\"adresse\",\"value\":\"{{event.preview}}\"}"
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "7c26d0e0a7",
+      "name": "date",
+      "next": [
+        {
+          "condition": "true",
+          "node": "nation"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-Me_Wdd"
+      ],
+      "onReceive": [
+        "builtin/setVariable {\"type\":\"session\",\"name\":\"date\",\"value\":\"{{event.preview}}\"}"
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "adc0dbb1b4",
+      "name": "nation",
+      "next": [
+        {
+          "condition": "true",
+          "node": "close"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-yViXk5"
+      ],
+      "onReceive": [
+        "builtin/setVariable {\"type\":\"session\",\"name\":\"nation\",\"value\":\"{{event.preview}}\"}"
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "fb8048b1fa",
+      "name": "close",
+      "next": [
+        {
+          "condition": "true",
+          "node": "article"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-7S-bea",
+        "say #!builtin_text-vXjuzt"
+      ],
+      "onReceive": [
+        "builtin/setVariable {\"type\":\"session\",\"name\":\"close\",\"value\":\"{{event.preview}}\"}"
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "5036c25a99",
+      "name": "article",
+      "next": [
+        {
+          "condition": "true",
+          "node": "poste"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-NamJHP"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "dc84da4cf0",
+      "name": "poste",
+      "next": [
+        {
+          "condition": "true",
+          "node": "tache"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-RCBDct"
+      ],
+      "onReceive": [
+        "builtin/setVariable {\"type\":\"session\",\"name\":\"poste\",\"value\":\"{{event.preview}}\"}"
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "c84c431347",
+      "name": "tache",
+      "next": [
+        {
+          "condition": "true",
+          "node": "article1"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-vEU8GX"
+      ],
+      "onReceive": [
+        "builtin/setVariable {\"type\":\"session\",\"name\":\"tache\",\"value\":\"{{event.preview}}\"}"
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "aa0e06fc7b",
+      "name": "article1",
+      "next": [
+        {
+          "condition": "true",
+          "node": "fin"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-Wk-L9Q",
+        "say #!builtin_text-taO4dd"
+      ],
+      "onReceive": [
+        "builtin/setVariable {\"type\":\"session\",\"name\":\"effet\",\"value\":\"{{event.preview}}\"}"
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "c3f56464a3",
+      "name": "fin",
+      "next": [
+        {
+          "condition": "true",
+          "node": "essai"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-KJqvDu"
+      ],
+      "onReceive": [
+        "builtin/setVariable {\"type\":\"session\",\"name\":\"fin\",\"value\":\"{{event.preview}}\"}"
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "1aa04f19a5",
+      "name": "essai",
+      "next": [
+        {
+          "condition": "true",
+          "node": "lieu_de_travail"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-Yogr2N"
+      ],
+      "onReceive": [
+        "builtin/setVariable {\"type\":\"session\",\"name\":\"essai\",\"value\":\"{{event.preview}}\"}"
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "d41c06eadf",
+      "name": "lieu_de_travail",
+      "next": [
+        {
+          "condition": "true",
+          "node": "heure"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-G08KQF"
+      ],
+      "onReceive": [
+        "builtin/setVariable {\"type\":\"session\",\"name\":\"travail\",\"value\":\"{{event.preview}}\"}"
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "9055be2ed9",
+      "name": "heure",
+      "next": [
+        {
+          "condition": "true",
+          "node": "salaire"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-1Z0eGY"
+      ],
+      "onReceive": [
+        "builtin/setVariable {\"type\":\"session\",\"name\":\"hetravail\",\"value\":\"{{event.preview}}\"}"
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "a7c08faf65",
+      "name": "salaire",
+      "next": [
+        {
+          "condition": "true",
+          "node": "emp"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-eOn7GB"
+      ],
+      "onReceive": [
+        "builtin/setVariable {\"type\":\"session\",\"name\":\"salaire\",\"value\":\"{{event.preview}}\"}"
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "72280877ed",
+      "name": "emp",
+      "next": [
+        {
+          "condition": "true",
+          "node": "redaction"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-va8Xj9"
+      ],
+      "onReceive": [
+        "builtin/setVariable {\"type\":\"session\",\"name\":\"noemp\",\"value\":\"{{event.preview}}\"}"
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "73b9f4cd2c",
+      "name": "redaction",
+      "next": [
+        {
+          "condition": "true",
+          "node": "redaction1"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-EGcEq4"
+      ],
+      "onReceive": [
+        "builtin/setVariable {\"type\":\"session\",\"name\":\"redact\",\"value\":\"{{event.preview}}\"}"
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "c1fecae21c",
+      "name": "redaction1",
+      "next": [
+        {
+          "condition": "true",
+          "node": "termux"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-soU--V"
+      ],
+      "onReceive": [
+        "builtin/setVariable {\"type\":\"session\",\"name\":\"redate\",\"value\":\"{{event.preview}}\"}"
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "161f272115",
+      "name": "termux",
+      "next": [
+        {
+          "condition": "true",
+          "node": "info"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-s50oOm"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "ec135a225b",
+      "name": "info",
+      "next": [],
+      "onEnter": [],
+      "onReceive": null,
+      "type": "standard"
+    }
+  ]
+}

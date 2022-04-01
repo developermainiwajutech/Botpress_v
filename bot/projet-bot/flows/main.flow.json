@@ -1,0 +1,152 @@
+{
+  "version": "0.0.1",
+  "catchAll": {
+    "onReceive": [],
+    "next": []
+  },
+  "startNode": "Salutation",
+  "nodes": [
+    {
+      "id": "3bf3379c44",
+      "name": "Saluer",
+      "next": [
+        {
+          "condition": "true",
+          "node": "Tache"
+        }
+      ],
+      "onEnter": [
+        "builtin/setVariable {\"type\":\"session\",\"name\":\"saluer\",\"value\":\"true\"}",
+        "say #!builtin_text-f-wqVH",
+        "say #!builtin_text-VQfCpa"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "skill-b52a40",
+      "type": "skill-call",
+      "skill": "choice",
+      "name": "Tache",
+      "flow": "skills/choice-b52a40.flow.json",
+      "next": [
+        {
+          "caption": "User picked [Curricu...]",
+          "condition": "temp['skill-choice-ret-4g5o1vu5jn'] == \"Curriculum Vitae\"",
+          "node": "Certitude"
+        },
+        {
+          "caption": "User picked [Lettre ...]",
+          "condition": "temp['skill-choice-ret-4g5o1vu5jn'] == \"Lettre de motivation\"",
+          "node": "Discussion-lettre.flow.json"
+        },
+        {
+          "caption": "User picked [Cahier ...]",
+          "condition": "temp['skill-choice-ret-4g5o1vu5jn'] == \"Cahier de charge\"",
+          "node": "Discussion-cahier.flow.json"
+        },
+        {
+          "caption": "User picked [Fiche d...]",
+          "condition": "temp['skill-choice-ret-4g5o1vu5jn'] == \"Fiche de paye\"",
+          "node": "Discussion-fiche.flow.json"
+        },
+        {
+          "caption": "User picked [Contrat]",
+          "condition": "temp['skill-choice-ret-4g5o1vu5jn'] == \"Contrat\"",
+          "node": "Discussion-contrat.flow.json"
+        },
+        {
+          "caption": "User picked [Attesta...]",
+          "condition": "temp['skill-choice-ret-4g5o1vu5jn'] == \"Attestation\"",
+          "conditionType": "raw",
+          "node": "Discussion-attes.flow.json"
+        },
+        {
+          "caption": "On failure",
+          "condition": "true",
+          "node": "redirection-de-secours.flow.json"
+        }
+      ],
+      "onEnter": null,
+      "onReceive": null
+    },
+    {
+      "id": "cc7825081b",
+      "name": "Certitude",
+      "next": [
+        {
+          "condition": "true",
+          "node": "Oui_ou_Non"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-OPh04v",
+        "say #!builtin_text-9xZT4m"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "skill-d28aa1",
+      "type": "skill-call",
+      "skill": "choice",
+      "name": "Oui_ou_Non",
+      "flow": "skills/choice-d28aa1.flow.json",
+      "next": [
+        {
+          "caption": "User picked [Oui]",
+          "condition": "temp['skill-choice-ret-ixgk7ci51p'] == \"Oui\"",
+          "conditionType": "raw",
+          "node": "Discussion-cv.flow.json"
+        },
+        {
+          "caption": "User picked [Non]",
+          "condition": "temp['skill-choice-ret-ixgk7ci51p'] == \"Non\"",
+          "node": "Refus"
+        },
+        {
+          "caption": "On failure",
+          "condition": "true",
+          "conditionType": "always",
+          "node": "redirection-de-secours.flow.json"
+        }
+      ],
+      "onEnter": null,
+      "onReceive": null
+    },
+    {
+      "id": "f978cf4663",
+      "name": "Refus",
+      "next": [
+        {
+          "condition": "true",
+          "node": "Tache"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-RAYJca"
+      ],
+      "onReceive": [],
+      "type": "standard"
+    },
+    {
+      "id": "entry",
+      "name": "Salutation",
+      "next": [
+        {
+          "condition": "session.greed === \"true\"",
+          "conditionType": "props",
+          "node": "Tache"
+        },
+        {
+          "condition": "true",
+          "node": "Saluer"
+        }
+      ],
+      "onEnter": [
+        "builtin/setVariable {\"type\":\"session\",\"name\":\"hello\",\"value\":\"{{event.nlu.language}}\"}"
+      ],
+      "onReceive": null
+    }
+  ]
+}

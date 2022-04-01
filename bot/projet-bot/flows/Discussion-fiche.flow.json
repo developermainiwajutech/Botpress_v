@@ -1,0 +1,206 @@
+{
+  "version": "0.0.1",
+  "catchAll": {},
+  "startNode": "salarie",
+  "description": "",
+  "nodes": [
+    {
+      "id": "507567281a",
+      "name": "salarie",
+      "onEnter": [
+        "say #!builtin_text-bsEDDR",
+        "say #!builtin_text-Lsa-4O"
+      ],
+      "onReceive": [
+        "builtin/setVariable {\"type\":\"session\",\"name\":\"noms\",\"value\":\"{{event.preview}}\"}"
+      ],
+      "next": [
+        {
+          "condition": "true",
+          "node": "pren"
+        }
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "566646ea07",
+      "name": "pren",
+      "next": [
+        {
+          "condition": "true",
+          "node": "emploi"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-SyZFvt"
+      ],
+      "onReceive": [
+        "builtin/setVariable {\"type\":\"session\",\"name\":\"pré\",\"value\":\"{{event.preview}}\"}"
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "99038b3769",
+      "name": "emploi",
+      "next": [
+        {
+          "condition": "true",
+          "node": "employeur"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-cgr2nI"
+      ],
+      "onReceive": [
+        "builtin/setVariable {\"type\":\"session\",\"name\":\"emploi\",\"value\":\"{{event.preview}}\"}"
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "5373377e4c",
+      "name": "employeur",
+      "next": [
+        {
+          "condition": "true",
+          "node": "adress"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-1h64ia",
+        "say #!builtin_text-SlnOPB"
+      ],
+      "onReceive": [
+        "builtin/setVariable {\"type\":\"session\",\"name\":\"name\",\"value\":\"{{event.preview}}\"}"
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "4206ab1b90",
+      "name": "adress",
+      "next": [
+        {
+          "condition": "true",
+          "node": "telephone"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-dG5wG7"
+      ],
+      "onReceive": [
+        "builtin/setVariable {\"type\":\"session\",\"name\":\"adresse\",\"value\":\"{{event.preview}}\"}"
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "911a6dbfc9",
+      "name": "telephone",
+      "next": [
+        {
+          "condition": "true",
+          "node": "email"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-P6rqv5"
+      ],
+      "onReceive": [
+        "builtin/setVariable {\"type\":\"session\",\"name\":\"telephone\",\"value\":\"{{event.preview}}\"}"
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "8d045cfafb",
+      "name": "email",
+      "next": [
+        {
+          "condition": "true",
+          "node": "periode"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-QSKhqY"
+      ],
+      "onReceive": [
+        "builtin/setVariable {\"type\":\"session\",\"name\":\"email\",\"value\":\"{{event.preview}}\"}"
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "70f3dce682",
+      "name": "periode",
+      "next": [
+        {
+          "condition": "true",
+          "node": "taux"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-1ew6X9"
+      ],
+      "onReceive": [
+        "builtin/setVariable {\"type\":\"session\",\"name\":\"période\",\"value\":\"{{event.preview}}\"}"
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "3ca68a4d49",
+      "name": "taux",
+      "next": [
+        {
+          "condition": "true",
+          "node": "merci"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-RCZxRT"
+      ],
+      "onReceive": [
+        "builtin/setVariable {\"type\":\"session\",\"name\":\"taux\",\"value\":\"{{event.preview}}\"}"
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "5fe7a13554",
+      "name": "merci",
+      "next": [
+        {
+          "condition": "true",
+          "node": "oui_non"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-O-pfTh"
+      ],
+      "onReceive": [],
+      "type": "standard"
+    },
+    {
+      "id": "skill-b138ad",
+      "type": "skill-call",
+      "skill": "choice",
+      "name": "oui_non",
+      "flow": "skills/choice-b138ad.flow.json",
+      "next": [
+        {
+          "caption": "User picked [Oui]",
+          "condition": "temp['skill-choice-ret-u5zmt10wu0'] == \"Oui\"",
+          "conditionType": "raw",
+          "node": "main.flow.json#Tache"
+        },
+        {
+          "caption": "User picked [Non]",
+          "condition": "temp['skill-choice-ret-u5zmt10wu0'] == \"Non\"",
+          "conditionType": "raw",
+          "node": "main.flow.json"
+        },
+        {
+          "caption": "On failure",
+          "condition": "true",
+          "node": "redirection-de-secours.flow.json"
+        }
+      ],
+      "onEnter": null,
+      "onReceive": null
+    }
+  ]
+}

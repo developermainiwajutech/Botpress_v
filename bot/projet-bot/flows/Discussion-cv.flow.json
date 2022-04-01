@@ -1,0 +1,53 @@
+{
+  "version": "0.0.1",
+  "catchAll": {},
+  "startNode": "Nom",
+  "description": "",
+  "nodes": [
+    {
+      "id": "4be08b169d",
+      "name": "Nom",
+      "onEnter": [
+        "say #!builtin_text-gaf-GA"
+      ],
+      "onReceive": [],
+      "next": [
+        {
+          "condition": "true",
+          "node": "Age"
+        }
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "bb9b549a79",
+      "name": "Age",
+      "next": [
+        {
+          "condition": "true",
+          "node": "Couple"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-fIFdYU"
+      ],
+      "onReceive": [],
+      "type": "standard"
+    },
+    {
+      "id": "3f0db61db8",
+      "name": "Couple",
+      "next": [
+        {
+          "condition": "true",
+          "node": ""
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-7P8UL6"
+      ],
+      "onReceive": [],
+      "type": "standard"
+    }
+  ]
+}

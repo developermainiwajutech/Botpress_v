@@ -1,0 +1,53 @@
+{
+  "locked": false,
+  "disabled": false,
+  "private": false,
+  "details": {},
+  "$schema": "../../bot.config.schema.json",
+  "description": "",
+  "active": true,
+  "version": "12.26.10",
+  "author": "Botpress, Inc.",
+  "license": "AGPL-3.0",
+  "imports": {
+    "modules": [],
+    "incomingMiddleware": [],
+    "outgoingMiddleware": [],
+    "contentTypes": [
+      "builtin_action-button",
+      "builtin_audio",
+      "builtin_card",
+      "builtin_carousel",
+      "dropdown",
+      "builtin_file",
+      "builtin_image",
+      "builtin_location",
+      "builtin_single-choice",
+      "builtin_text",
+      "builtin_video"
+    ]
+  },
+  "dialog": {
+    "timeoutInterval": "5m"
+  },
+  "logs": {
+    "expiration": "1 week"
+  },
+  "defaultLanguage": "en",
+  "languages": [
+    "en"
+  ],
+  "id": "projet-bot",
+  "name": "Projet bot",
+  "pipeline_status": {
+    "current_stage": {
+      "id": "prod",
+      "promoted_on": "2022-03-04T09:23:31.224Z",
+      "promoted_by": "admin@gmail.com"
+    }
+  },
+  "messaging": {
+    "id": "fc111a09-f1ef-42bb-aa72-520283263bd9",
+    "token": "529bacac-627a-4964-a518-1bacf468b34d.nCQ3QCZMpK4648zy+Ow0jMv00U+zdr9t22aAURbhMp6Ufk/5YUcev7ih8fiJ8qlegjdfKfRP2gQb4ppYmWcdCOXO"
+  }
+}

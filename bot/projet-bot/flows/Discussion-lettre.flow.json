@@ -1,0 +1,308 @@
+{
+  "version": "0.0.1",
+  "catchAll": {},
+  "startNode": "Nom",
+  "description": "",
+  "nodes": [
+    {
+      "id": "47fed6f94d",
+      "name": "Nom",
+      "onEnter": [
+        "say #!builtin_text-gaf-GA",
+        "say #!builtin_text-9rxwhz"
+      ],
+      "onReceive": [
+        "builtin/setVariable {\"type\":\"session\",\"name\":\"nom\",\"value\":\"{{event.preview}}\"}"
+      ],
+      "next": [
+        {
+          "condition": "true",
+          "node": "adr"
+        }
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "fe7f2cbd7a",
+      "name": "adr",
+      "next": [
+        {
+          "condition": "true",
+          "node": "Tel"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-A__57f"
+      ],
+      "onReceive": [
+        "builtin/setVariable {\"type\":\"session\",\"name\":\"adresse\",\"value\":\"{{event.preview}}\"}"
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "skill-9b4231",
+      "type": "skill-call",
+      "skill": "choice",
+      "name": "choice-9b4231",
+      "flow": "skills/choice-9b4231.flow.json",
+      "next": [
+        {
+          "caption": "User picked [Oui]",
+          "condition": "temp['skill-choice-ret-2mnu503coh'] == \"Oui\"",
+          "conditionType": "raw",
+          "node": "#Tache"
+        },
+        {
+          "caption": "User picked [Non]",
+          "condition": "temp['skill-choice-ret-2mnu503coh'] == \"Non\"",
+          "conditionType": "raw",
+          "node": "fin_"
+        },
+        {
+          "caption": "On failure",
+          "condition": "true",
+          "conditionType": "always",
+          "node": "redirection-de-secours.flow.json"
+        }
+      ],
+      "onEnter": null,
+      "onReceive": null
+    },
+    {
+      "id": "81503f541e",
+      "name": "fin",
+      "next": [
+        {
+          "condition": "true",
+          "node": "choice-9b4231"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-V0l7Bo"
+      ],
+      "onReceive": [
+        "say #!builtin_text-EaUQPs"
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "71612db546",
+      "name": "email",
+      "next": [
+        {
+          "condition": "event.nlu.intent.name === 'tout-y'",
+          "conditionType": "intent",
+          "node": "redirection-de-secours.flow.json"
+        },
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "lieu"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-wBtEii"
+      ],
+      "onReceive": [
+        "builtin/setVariable {\"type\":\"session\",\"name\":\"email\",\"value\":\"{{event.preview}}\"}"
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "bd83f9d85a",
+      "name": "fin_",
+      "next": [
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "Resume"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-RAYJca"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "63c442c97f",
+      "name": "lieu",
+      "next": [
+        {
+          "condition": "true",
+          "node": "date"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-91d1NK"
+      ],
+      "onReceive": [
+        "builtin/setVariable {\"type\":\"session\",\"name\":\"ville\",\"value\":\"{{event.preview}}\"}"
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "1b19bd97a8",
+      "name": "date",
+      "next": [
+        {
+          "condition": "true",
+          "node": "personne"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-kf-Bo_"
+      ],
+      "onReceive": [
+        "builtin/setVariable {\"type\":\"session\",\"name\":\"date\",\"value\":\"{{event.preview}}\"}"
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "0e5029777b",
+      "name": "obj",
+      "next": [
+        {
+          "condition": "true",
+          "node": "Statut"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-PO-qw5"
+      ],
+      "onReceive": [
+        "builtin/setVariable {\"type\":\"session\",\"name\":\"obj\",\"value\":\"{{event.preview}}\"}"
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "d02985956f",
+      "name": "personne",
+      "next": [
+        {
+          "condition": "true",
+          "node": "poste"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-P3JQSC"
+      ],
+      "onReceive": [
+        "builtin/setVariable {\"type\":\"session\",\"name\":\"pers\",\"value\":\"{{event.preview}}\"}"
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "a492d8bf08",
+      "name": "Statut",
+      "next": [
+        {
+          "condition": "true",
+          "node": "A_poste"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-erJLNQ"
+      ],
+      "onReceive": [
+        "builtin/setVariable {\"type\":\"session\",\"name\":\"statut\",\"value\":\"{{event.preview}}\"}"
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "d4883864a0",
+      "name": "A_poste",
+      "next": [
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "Experience"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-kB6I5I"
+      ],
+      "onReceive": [
+        "builtin/setVariable {\"type\":\"session\",\"name\":\"pos\",\"value\":\"{{event.preview}}\"}"
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "714f5f5c47",
+      "name": "Resume",
+      "next": [
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "node-0423"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-atSjYR"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "4b5e540d33",
+      "name": "node-0423",
+      "next": [],
+      "onEnter": [
+        "lettre {\"name\":\"info\",\"value\":\"{{event.preview}}\"}"
+      ],
+      "onReceive": null,
+      "type": "standard"
+    },
+    {
+      "id": "f3f6ecd98f",
+      "name": "Tel",
+      "next": [
+        {
+          "condition": "true",
+          "node": "email"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-0ptVPU"
+      ],
+      "onReceive": [
+        "builtin/setVariable {\"type\":\"session\",\"name\":\"telephone\",\"value\":\"{{event.preview}}\"}"
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "39371cec3a",
+      "name": "poste",
+      "next": [
+        {
+          "condition": "true",
+          "node": "obj"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-VTI_7G"
+      ],
+      "onReceive": [
+        "builtin/setVariable {\"type\":\"session\",\"name\":\"poste\",\"value\":\"{{event.preview}}\"}"
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "4f825daeb6",
+      "name": "Experience",
+      "next": [
+        {
+          "condition": "true",
+          "node": "fin"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-pwl00r"
+      ],
+      "onReceive": [
+        "builtin/setVariable {\"type\":\"session\",\"name\":\"exp\",\"value\":\"{{event.preview}}\"}"
+      ],
+      "type": "standard"
+    }
+  ]
+}

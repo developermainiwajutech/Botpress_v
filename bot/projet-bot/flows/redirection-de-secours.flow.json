@@ -1,0 +1,26 @@
+{
+  "version": "0.0.1",
+  "catchAll": {},
+  "startNode": "Redirection",
+  "description": "",
+  "nodes": [
+    {
+      "id": "0e82d5a614",
+      "name": "Redirection",
+      "onEnter": [
+        "say #!builtin_text-c-VBpv",
+        "say #!builtin_text-U9TeeD",
+        "builtin/wait {\"delay\":\"2000\"}"
+      ],
+      "onReceive": null,
+      "next": [
+        {
+          "condition": "true",
+          "conditionType": "always",
+          "node": "main.flow.json"
+        }
+      ],
+      "type": "standard"
+    }
+  ]
+}

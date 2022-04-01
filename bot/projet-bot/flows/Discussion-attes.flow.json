@@ -1,0 +1,140 @@
+{
+  "version": "0.0.1",
+  "catchAll": {},
+  "startNode": "nom",
+  "description": "",
+  "nodes": [
+    {
+      "id": "b4744219a5",
+      "name": "nom",
+      "onEnter": [
+        "say #!builtin_text-q-PMIV"
+      ],
+      "onReceive": [
+        "builtin/setVariable {\"type\":\"session\",\"name\":\"nom\",\"value\":\"{{event.preview}}\"}"
+      ],
+      "next": [
+        {
+          "condition": "true",
+          "node": "societe"
+        }
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "a299f14eeb",
+      "name": "societe",
+      "next": [
+        {
+          "condition": "true",
+          "node": "fonction"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-J6Lqqd"
+      ],
+      "onReceive": [
+        "builtin/setVariable {\"type\":\"session\",\"name\":\"societe\",\"value\":\"{{event.preview}}\"}"
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "4b4ac5cf3f",
+      "name": "fonction",
+      "next": [
+        {
+          "condition": "true",
+          "node": "stagiaire"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-QFLotO"
+      ],
+      "onReceive": [
+        "builtin/setVariable {\"type\":\"session\",\"name\":\"fonction\",\"value\":\"{{event.preview}}\"}"
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "abe0462726",
+      "name": "stagiaire",
+      "next": [
+        {
+          "condition": "true",
+          "node": "poste"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-THI9oe",
+        "say #!builtin_text-gytCSy"
+      ],
+      "onReceive": [
+        "builtin/setVariable {\"type\":\"session\",\"name\":\"stage\",\"value\":\"{{event.preview}}\"}"
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "21e0b728a1",
+      "name": "poste",
+      "next": [
+        {
+          "condition": "true",
+          "node": "periode"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-gJQAZB"
+      ],
+      "onReceive": [
+        "builtin/setVariable {\"type\":\"session\",\"name\":\"poste\",\"value\":\"{{event.preview}}\"}"
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "9eb9d13002",
+      "name": "periode",
+      "next": [
+        {
+          "condition": "true",
+          "node": "oui_non-copy"
+        }
+      ],
+      "onEnter": [
+        "say #!builtin_text-wIRP3m"
+      ],
+      "onReceive": [
+        "builtin/setVariable {\"type\":\"session\",\"name\":\"periode\",\"value\":\"{{event.preview}}\"}"
+      ],
+      "type": "standard"
+    },
+    {
+      "id": "skill-220a50",
+      "type": "skill-call",
+      "skill": "choice",
+      "name": "oui_non-copy",
+      "flow": "skills/choice-220a50.flow.json",
+      "next": [
+        {
+          "caption": "User picked [Oui]",
+          "condition": "temp['skill-choice-ret-bvj-v63qpt'] == \"Oui\"",
+          "conditionType": "raw",
+          "node": "main.flow.json#Tache"
+        },
+        {
+          "caption": "User picked [Non]",
+          "condition": "temp['skill-choice-ret-bvj-v63qpt'] == \"Non\"",
+          "conditionType": "raw",
+          "node": "main.flow.json"
+        },
+        {
+          "caption": "On failure",
+          "condition": "true",
+          "conditionType": "always",
+          "node": "redirection-de-secours.flow.json"
+        }
+      ],
+      "onEnter": null,
+      "onReceive": null
+    }
+  ]
+}

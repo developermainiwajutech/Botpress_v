@@ -1,0 +1,108 @@
+{
+  "version": "0.0.1",
+  "catchAll": {
+    "next": []
+  },
+  "startNode": "entry",
+  "skillData": {
+    "randomId": "4g5o1vu5jn",
+    "contentId": "builtin_single-choice-70ryxe",
+    "invalidContentId": "",
+    "keywords": {
+      "Curriculum Vitae": [
+        "Curriculum Vitae"
+      ],
+      "Lettre de motivation": [
+        "Lettre de motivation"
+      ],
+      "Cahier de charge": [
+        "Cahier de charge"
+      ],
+      "Fiche de paye": [
+        "Fiche de paye",
+        "Fiche de paie"
+      ],
+      "Contrat": [
+        "Contrat"
+      ],
+      "Attestation": [
+        "Attestation"
+      ]
+    },
+    "config": {
+      "nbMaxRetries": 3,
+      "repeatChoicesOnInvalid": false,
+      "variableName": ""
+    }
+  },
+  "nodes": [
+    {
+      "name": "entry",
+      "onEnter": [
+        "say #!builtin_single-choice-70ryxe {\"skill\":\"choice\"}"
+      ],
+      "next": [
+        {
+          "condition": "true",
+          "node": "parse"
+        }
+      ],
+      "id": "688275"
+    },
+    {
+      "name": "parse",
+      "onReceive": [
+        "basic-skills/choice_parse_answer {\"randomId\":\"4g5o1vu5jn\",\"contentId\":\"builtin_single-choice-70ryxe\",\"invalidContentId\":\"\",\"keywords\":{\"Curriculum Vitae\":[\"Curriculum Vitae\"],\"Lettre de motivation\":[\"Lettre de motivation\"],\"Cahier de charge\":[\"Cahier de charge\"],\"Fiche de paye\":[\"Fiche de paye\",\"Fiche de paie\"],\"Contrat\":[\"Contrat\"],\"Attestation\":[\"Attestation\"]},\"config\":{\"nbMaxRetries\":3,\"repeatChoicesOnInvalid\":false,\"variableName\":\"\"}}"
+      ],
+      "next": [
+        {
+          "condition": "temp['skill-choice-valid-4g5o1vu5jn'] === true",
+          "node": "#"
+        },
+        {
+          "condition": "true",
+          "node": "invalid"
+        }
+      ],
+      "triggers": [
+        {
+          "conditions": [
+            {
+              "id": "always"
+            }
+          ]
+        }
+      ],
+      "onEnter": [],
+      "id": "245923"
+    },
+    {
+      "name": "invalid",
+      "onEnter": [
+        "basic-skills/choice_invalid_answer {\"randomId\":\"4g5o1vu5jn\"}"
+      ],
+      "next": [
+        {
+          "condition": "Number(temp['skill-choice-invalid-count-4g5o1vu5jn']) > Number(3)",
+          "node": "#"
+        },
+        {
+          "condition": "true",
+          "node": "sorry"
+        }
+      ],
+      "id": "336328"
+    },
+    {
+      "name": "sorry",
+      "onEnter": [],
+      "next": [
+        {
+          "condition": "true",
+          "node": "parse"
+        }
+      ],
+      "id": "036059"
+    }
+  ]
+}

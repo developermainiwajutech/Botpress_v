@@ -1,0 +1,153 @@
+{
+  "nodes": [
+    {
+      "id": "3bf3379c44",
+      "position": {
+        "x": -20,
+        "y": -70
+      }
+    },
+    {
+      "id": "skill-b52a40",
+      "position": {
+        "x": 270,
+        "y": -280
+      }
+    },
+    {
+      "id": "cc7825081b",
+      "position": {
+        "x": 610,
+        "y": -310
+      }
+    },
+    {
+      "id": "skill-d28aa1",
+      "position": {
+        "x": 735,
+        "y": -85
+      }
+    },
+    {
+      "id": "f978cf4663",
+      "position": {
+        "x": 475,
+        "y": 55
+      }
+    },
+    {
+      "id": "entry",
+      "position": {
+        "x": -180,
+        "y": -275
+      }
+    }
+  ],
+  "links": [
+    {
+      "source": "3bf3379c44",
+      "sourcePort": "out0",
+      "target": "skill-b52a40",
+      "points": [
+        {
+          "x": 180,
+          "y": 104
+        },
+        {
+          "x": 271,
+          "y": -262
+        }
+      ]
+    },
+    {
+      "source": "cc7825081b",
+      "sourcePort": "out0",
+      "target": "skill-d28aa1",
+      "points": [
+        {
+          "x": 810,
+          "y": -167
+        },
+        {
+          "x": 736,
+          "y": -67
+        }
+      ]
+    },
+    {
+      "source": "entry",
+      "sourcePort": "out1",
+      "target": "3bf3379c44",
+      "points": [
+        {
+          "x": 20,
+          "y": -170
+        },
+        {
+          "x": -19,
+          "y": -52
+        }
+      ]
+    },
+    {
+      "source": "entry",
+      "sourcePort": "out0",
+      "target": "skill-b52a40",
+      "points": [
+        {
+          "x": 20,
+          "y": -200
+        },
+        {
+          "x": 271,
+          "y": -262
+        }
+      ]
+    },
+    {
+      "source": "f978cf4663",
+      "sourcePort": "out0",
+      "target": "skill-b52a40",
+      "points": [
+        {
+          "x": 675,
+          "y": 179
+        },
+        {
+          "x": 271,
+          "y": -262
+        }
+      ]
+    },
+    {
+      "source": "skill-b52a40",
+      "sourcePort": "out0",
+      "target": "cc7825081b",
+      "points": [
+        {
+          "x": 470,
+          "y": -236
+        },
+        {
+          "x": 611,
+          "y": -292
+        }
+      ]
+    },
+    {
+      "source": "skill-d28aa1",
+      "sourcePort": "out1",
+      "target": "f978cf4663",
+      "points": [
+        {
+          "x": 935,
+          "y": -10
+        },
+        {
+          "x": 476,
+          "y": 73
+        }
+      ]
+    }
+  ]
+}
