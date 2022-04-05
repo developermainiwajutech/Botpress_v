@@ -1,0 +1,4 @@
+FORM botpress/server:v12_16_0
+ADD . /botpress
+WORKDIR /botpress
+CMD ["./bp"]
